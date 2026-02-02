@@ -1,12 +1,12 @@
-# Struts 2 + HTMX + CXSLT Demo
+# Struts 2 + HTMX + XSLT Demo
 
-A modern demonstration of building interactive Java web applications using **Struts 2.7+**, **HTMX**, and **CXSLT** (Custom XSLT). This project showcases how to achieve partial page updates and server-side XML transformation without the complexity of heavy JavaScript frameworks.
+A modern demonstration of building interactive Java web applications using **Struts 2.7+**, **HTMX**, and **XSLT** (Custom XSLT). This project showcases how to achieve partial page updates and server-side XML transformation without the complexity of heavy JavaScript frameworks.
 
 ## 🚀 Tech Stack
 - **Java 17** (Required)
 - **Struts 7.0.3** (Jakarta EE 10 compatible)
 - **HTMX 1.9** (Partial page updates via AJAX)
-- **CXSLT** (Server-side XML transformation via JRE XSLT engine)
+- **XSLT** (Server-side XML transformation via JRE XSLT engine)
 - **Jetty 12** (Lightweight embedded server)
 - **Maven** (Build and dependency management)
 
@@ -19,7 +19,7 @@ A modern demonstration of building interactive Java web applications using **Str
 1. **Clone the repository**:
    ```bash
    git clone <your-repo-url>
-   cd struts-htmx-cxslt-project
+   cd struts-htmx-xslt-project
    ```
 
 2. **Clean and Compile**:
@@ -40,14 +40,14 @@ A modern demonstration of building interactive Java web applications using **Str
    Once the server starts, open your browser and navigate to:
    - **Home Gateway**: [http://localhost:8080/indexAction](http://localhost:8080/indexAction)
    - **HTMX Demo**: [http://localhost:8080/productsAction](http://localhost:8080/productsAction)
-   - **CXSLT Demo**: [http://localhost:8080/xsltProductsAction](http://localhost:8080/xsltProductsAction)
+   - **XSLT Demo**: [http://localhost:8080/xsltProductsAction](http://localhost:8080/xsltProductsAction)
 
 ## 💡 Key Features
 
 ### Flow A: HTMX + Struts
 Uses HTMX to send AJAX requests to Struts Actions. The server returns **JSP Fragments** (partial HTML) which HTMX swaps into the DOM, providing a "Single Page App" feel for search, add, and delete operations.
 
-### Flow B: CXSLT Rendering
+### Flow B: XSLT Rendering
 Demonstrates true separation of data and presentation. The Struts Action builds a **W3C DOM Document** (XML) which is then transformed into HTML using **XSLT stylesheets** on the server before being sent to the browser.
 
 ## 📁 Project Structure
