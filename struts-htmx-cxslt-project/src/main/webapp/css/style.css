@@ -1,0 +1,573 @@
+/* =====================================================
+   GLOBAL STYLES
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+.app-header {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #a0aec0;
+    font-size: 0.95rem;
+}
+
+.back-link {
+    display: inline-block;
+    color: #63b3ed;
+    text-decoration: none;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #90cdf4;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+/* =====================================================
+   CONCEPT CARDS (Home page)
+   ===================================================== */
+.concept-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.concept-card h2 {
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.concept-item {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.concept-icon {
+    width: 40px;
+    height: 40px;
+    background: #4299e1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-weight: bold;
+}
+
+.concept-item h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+}
+
+.concept-item p {
+    font-size: 0.82rem;
+    color: #718096;
+}
+
+/* =====================================================
+   NAV CARDS (Home page)
+   ===================================================== */
+.nav-cards {
+    margin-bottom: 1.5rem;
+}
+
+.nav-cards h2 {
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.nav-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: #2d3748;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.nav-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.htmx-card:hover { border-color: #4299e1; }
+.xslt-card:hover { border-color: #48bb78; }
+
+.nav-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.nav-card p {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 0.75rem;
+}
+
+.nav-tag {
+    display: inline-block;
+    background: #ebf8ff;
+    color: #2b6cb0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   TECH STACK
+   ===================================================== */
+.tech-stack {
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack h2 {
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+}
+
+.stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.stack-badge {
+    background: #2d3748;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* =====================================================
+   SEARCH SECTION
+   ===================================================== */
+.search-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.search-section h2 {
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+    font-size: 1.1rem;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+/* =====================================================
+   ADD FORM
+   ===================================================== */
+.add-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.add-section h2 {
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+    font-size: 1.1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.form-input {
+    padding: 0.6rem 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 120px;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+.form-input.short {
+    flex: 0 0 100px;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-add {
+    background: #4299e1;
+    color: white;
+}
+.btn-add:hover { background: #3182ce; }
+
+.btn-view {
+    background: #edf2f7;
+    color: #2d3748;
+}
+.btn-view:hover { background: #e2e8f0; }
+
+.btn-delete {
+    background: #fc8181;
+    color: white;
+}
+.btn-delete:hover { background: #f56565; }
+
+.btn-close {
+    background: #e2e8f0;
+    color: #4a5568;
+    margin-top: 1rem;
+}
+.btn-close:hover { background: #cbd5e0; }
+
+.btn-htmx {
+    background: #4299e1;
+    color: white;
+    font-size: 0.8rem;
+}
+.btn-htmx:hover { background: #3182ce; }
+
+/* =====================================================
+   PRODUCT TABLE
+   ===================================================== */
+.list-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.list-section h2 {
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+    font-size: 1.1rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th {
+    text-align: left;
+    padding: 0.75rem;
+    background: #f7fafc;
+    color: #4a5568;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.product-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.9rem;
+}
+
+.product-row:hover {
+    background: #f7fafc;
+}
+
+.actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.no-results {
+    text-align: center;
+    color: #a0aec0;
+    padding: 2rem !important;
+    font-style: italic;
+}
+
+/* =====================================================
+   BADGES (Category labels)
+   ===================================================== */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: #ebf8ff;
+    color: #2b6cb0;
+}
+
+/* =====================================================
+   DETAIL PANEL
+   ===================================================== */
+.detail-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.detail-section h2 {
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+    font-size: 1.1rem;
+}
+
+.placeholder-text {
+    color: #a0aec0;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.detail-card {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.detail-header h3 {
+    font-size: 1.1rem;
+    color: #1a202c;
+}
+
+.detail-body {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.detail-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #4a5568;
+    min-width: 100px;
+    font-size: 0.85rem;
+}
+
+.detail-value {
+    color: #2d3748;
+    font-size: 0.85rem;
+}
+
+.error-card {
+    color: #e53e3e;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* =====================================================
+   PRICE
+   ===================================================== */
+.price {
+    font-weight: 600;
+    color: #2b6cb0;
+}
+
+/* =====================================================
+   FLOW DIAGRAM (CXSLT page)
+   ===================================================== */
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    background: #4299e1;
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    color: #a0aec0;
+    font-size: 1.2rem;
+}
+
+/* =====================================================
+   SUMMARY
+   ===================================================== */
+.summary-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.summary-section h2 {
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+    font-size: 1.1rem;
+}
+
+.result-count {
+    color: #718096;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+/* =====================================================
+   HTMX SPINNER / INDICATOR
+   =====================================================
+   htmx-indicator class is hidden by default.
+   HTMX adds the "active" class while a request is pending.
+   ===================================================== */
+.spinner {
+    display: none;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    color: #4299e1;
+}
+
+.spinner.htmx-indicator.active {
+    display: inline-block;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.app-footer {
+    background: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.82rem;
+    margin-top: auto;
+}

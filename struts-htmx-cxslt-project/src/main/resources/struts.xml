@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 6.0//EN"
+    "https://struts.apache.org/dtds/struts-6.0.dtd">
+
+<struts>
+
+    <constant name="struts.action.extension" value="action,,html"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" extends="xslt-default" namespace="/">
+
+        <!-- HOME -->
+        <action name="indexAction">
+            <result type="dispatcher">/index.jsp</result>
+        </action>
+
+        <!-- HTMX: Full product page -->
+        <action name="productsAction" class="com.example.struts.action.ProductAction" method="list">
+            <result type="dispatcher">/products.jsp</result>
+        </action>
+
+        <!-- HTMX: Product list fragment -->
+        <action name="productListAction" class="com.example.struts.action.ProductAction" method="list">
+            <result type="dispatcher">/fragments/productList.jsp</result>
+        </action>
+
+        <!-- HTMX: Product detail fragment -->
+        <action name="productDetailAction" class="com.example.struts.action.ProductAction" method="detail">
+            <result type="dispatcher">/fragments/productDetail.jsp</result>
+        </action>
+
+        <!-- HTMX: Search products -->
+        <action name="searchProductsAction" class="com.example.struts.action.ProductAction" method="search">
+            <result type="dispatcher">/fragments/productList.jsp</result>
+        </action>
+
+        <!-- HTMX: Add product -->
+        <action name="addProductAction" class="com.example.struts.action.ProductAction" method="add">
+            <result type="dispatcher">/fragments/productList.jsp</result>
+        </action>
+
+        <!-- HTMX: Delete product -->
+        <action name="deleteProductAction" class="com.example.struts.action.ProductAction" method="delete">
+            <result type="dispatcher">/fragments/productList.jsp</result>
+        </action>
+
+        <!-- CXSLT: Full page via XSLT -->
+        <action name="xsltProductsAction" class="com.example.struts.action.XsltProductAction" method="execute">
+            <result type="xslt">
+                <param name="stylesheetLocation">/WEB-INF/xslt/products.xslt</param>
+                <param name="exposedValue">model</param>
+            </result>
+        </action>
+
+        <!-- CXSLT: Fragment via XSLT (used by HTMX) -->
+        <action name="xsltProductListAction" class="com.example.struts.action.XsltProductAction" method="execute">
+            <result type="xslt">
+                <param name="stylesheetLocation">/WEB-INF/xslt/productList.xslt</param>
+                <param name="exposedValue">model</param>
+            </result>
+        </action>
+
+    </package>
+
+</struts>

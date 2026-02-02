@@ -1,0 +1,28 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/resources/architecture/*.png
+!**/src/main/resources/architecture/*.jpg
+!**/src/main/resources/architecture/*.gif
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.settings/
+.project
+.classpath
+.factorypath
+
+### VS Code ###
+.vscode/
+
+### OS X ###
+.DS_Store
+
+### Temporary / Extracted Files ###
+struts-default.xml
+struts-plugin.xml
+jsp/
