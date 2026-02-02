@@ -75,34 +75,21 @@
         <section class="add-section">
             <h2>Add Product</h2>
 
-            <!--
-                =====================================================
-                HTMX FORM (no <form> action needed!)
-                =====================================================
-                hx-post sends all named inputs as POST parameters.
-                Struts 2 automatically maps them to ProductAction fields.
-
-                After success, the response (updated product list)
-                replaces the content of #product-list.
-
-                hx-swap-oob is NOT used here — we simply target
-                the list div and swap it in.
-                =====================================================
-            -->
-            <div class="add-form"
-                 hx-post="addProductAction"
-                 hx-target="#product-list"
-                 hx-swap="innerHTML"
-                 hx-indicator="#spinner"
+            <form hx-post="addProductAction"
+                  hx-target="#product-list"
+                  hx-swap="innerHTML"
+                  hx-indicator="#spinner"
+                  class="add-form"
+                  hx-on::after-request="this.reset()"
             >
                 <div class="form-row">
                     <input type="text" name="productName" placeholder="Product Name" required class="form-input"/>
                     <input type="text" name="productCategory" placeholder="Category" class="form-input"/>
                     <input type="number" name="productPrice" placeholder="Price" step="0.01" class="form-input short"/>
                     <input type="text" name="productDescription" placeholder="Description" class="form-input"/>
-                    <button type="button" class="btn btn-add">+ Add</button>
+                    <button type="submit" class="btn btn-add">+ Add</button>
                 </div>
-            </div>
+            </form>
         </section>
 
         <!-- ===== PRODUCT LIST ===== -->

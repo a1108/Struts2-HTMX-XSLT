@@ -2,6 +2,7 @@ package com.example.struts.action;
 
 import com.example.struts.model.Product;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -149,22 +150,34 @@ public class ProductAction extends ActionSupport {
 
     public List<Product> getProducts() { return products; }
     public Product getSelectedProduct() { return selectedProduct; }
+    
+    // Direct getters for Struts 7 property access stability
+    public String getSelectedName() { return selectedProduct != null ? selectedProduct.getName() : ""; }
+    public String getSelectedCategory() { return selectedProduct != null ? selectedProduct.getCategory() : ""; }
+    public double getSelectedPrice() { return selectedProduct != null ? selectedProduct.getPrice() : 0.0; }
+    public String getSelectedDescription() { return selectedProduct != null ? selectedProduct.getDescription() : ""; }
 
     public String getSearchQuery() { return searchQuery; }
+    @StrutsParameter
     public void setSearchQuery(String searchQuery) { this.searchQuery = searchQuery; }
 
     public int getProductId() { return productId; }
+    @StrutsParameter
     public void setProductId(int productId) { this.productId = productId; }
 
     public String getProductName() { return productName; }
+    @StrutsParameter
     public void setProductName(String productName) { this.productName = productName; }
 
     public String getProductCategory() { return productCategory; }
+    @StrutsParameter
     public void setProductCategory(String productCategory) { this.productCategory = productCategory; }
 
     public double getProductPrice() { return productPrice; }
+    @StrutsParameter
     public void setProductPrice(double productPrice) { this.productPrice = productPrice; }
 
     public String getProductDescription() { return productDescription; }
+    @StrutsParameter
     public void setProductDescription(String productDescription) { this.productDescription = productDescription; }
 }

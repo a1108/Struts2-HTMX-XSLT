@@ -27,11 +27,11 @@
     <tbody>
         <s:iterator value="products" var="product">
             <tr class="product-row">
-                <td>${product.id}</td>
-                <td>${product.name}</td>
+                <td><s:property value="#product.id"/></td>
+                <td><s:property value="#product.name"/></td>
                 <td>
-                    <span class="badge badge-${product.category}">
-                        ${product.category}
+                    <span class="badge badge-<s:property value="#product.category"/>">
+                        <s:property value="#product.category"/>
                     </span>
                 </td>
                 <td class="price">\$<s:property value="#product.price"/></td>
@@ -47,7 +47,7 @@
                         =====================================================
                     -->
                     <button class="btn btn-view"
-                            hx-get="productDetailAction?productId=${product.id}"
+                            hx-get="productDetailAction?productId=<s:property value="#product.id"/>"
                             hx-target="#product-detail"
                             hx-swap="innerHTML"
                     >
@@ -65,7 +65,7 @@
                         =====================================================
                     -->
                     <button class="btn btn-delete"
-                            hx-post="deleteProductAction?productId=${product.id}"
+                            hx-post="deleteProductAction?productId=<s:property value="#product.id"/>"
                             hx-target="#product-list"
                             hx-swap="innerHTML"
                             hx-confirm="Are you sure you want to delete this product?"

@@ -7,6 +7,11 @@
 
     <constant name="struts.action.extension" value="action,,html"/>
     <constant name="struts.devMode" value="true"/>
+    
+    <!-- Allow OGNL to access our model and action classes -->
+    <constant name="struts.ognl.allowlist.enable" value="false" />
+    <constant name="struts.ognl.allowlist.packageNames" value="com.example.struts.model,com.example.struts.action,java.lang,java.util"/>
+    <constant name="struts.ognl.allowlist.classes" value="com.example.struts.model.Product,com.example.struts.action.ProductAction"/>
 
     <package name="default" extends="xslt-default" namespace="/">
 
@@ -18,31 +23,42 @@
         <!-- HTMX: Full product page -->
         <action name="productsAction" class="com.example.struts.action.ProductAction" method="list">
             <result type="dispatcher">/products.jsp</result>
+            <result name="error" type="dispatcher">/products.jsp</result>
         </action>
 
         <!-- HTMX: Product list fragment -->
         <action name="productListAction" class="com.example.struts.action.ProductAction" method="list">
             <result type="dispatcher">/fragments/productList.jsp</result>
+            <result name="error" type="dispatcher">/fragments/productList.jsp</result>
         </action>
 
         <!-- HTMX: Product detail fragment -->
         <action name="productDetailAction" class="com.example.struts.action.ProductAction" method="detail">
             <result type="dispatcher">/fragments/productDetail.jsp</result>
+            <result name="error" type="dispatcher">/fragments/productDetail.jsp</result>
         </action>
 
         <!-- HTMX: Search products -->
         <action name="searchProductsAction" class="com.example.struts.action.ProductAction" method="search">
             <result type="dispatcher">/fragments/productList.jsp</result>
+            <result name="error" type="dispatcher">/fragments/productList.jsp</result>
         </action>
 
         <!-- HTMX: Add product -->
         <action name="addProductAction" class="com.example.struts.action.ProductAction" method="add">
             <result type="dispatcher">/fragments/productList.jsp</result>
+            <result name="error" type="dispatcher">/fragments/productList.jsp</result>
         </action>
 
         <!-- HTMX: Delete product -->
         <action name="deleteProductAction" class="com.example.struts.action.ProductAction" method="delete">
             <result type="dispatcher">/fragments/productList.jsp</result>
+            <result name="error" type="dispatcher">/fragments/productList.jsp</result>
+        </action>
+
+        <!-- HTMX: Clear fragment -->
+        <action name="clearAction">
+            <result type="dispatcher">/fragments/empty.jsp</result>
         </action>
 
         <!-- CXSLT: Full page via XSLT -->
